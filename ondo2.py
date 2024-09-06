@@ -2,8 +2,9 @@ import math
 import time
 import RPi.GPIO as GPIO
 import dht11
-import wiringpi as w 
+import wiringpi as w
 import slackweb
+from config_csv import ConfigJson as CJ
 DIVR = 10000 # 4.7k ohm
 THERMISTOR =10000 # 10k ohm
 GPIO.setmode(GPIO.BCM)

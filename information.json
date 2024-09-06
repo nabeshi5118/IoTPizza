@@ -1,0 +1,14 @@
+{
+    "DIVR":10000,
+    "THERMISTOR":10000,
+    "DHT11_PIN":16,
+    "GPIO_OUT":26,
+    "GPIO_IN":6,
+    "B":3950,
+    "REF":3.3,
+    "UpperLimitHigh":330,
+    "UpperLimitLow":270,
+    "LowerLimitHigh":330,
+    "LowerLimitLow":270,
+    "LimitMode":1
+}
