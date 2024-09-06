@@ -1,0 +1,30 @@
+#ベースイメージ
+FROM balenalib/raspberrypi3-debian
+
+# タイムゾーンの設定
+ENV TZ=Asia/Tokyo
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+# 基本ツールのインストール
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    wget \
+    unzip \
+    git \
+    sudo \
+    curl \
+    ffmpeg \
+    libopencv-dev \
+    software-properties-common \
+    build-essential \
+    cmake \
+    python3 \
+    python3-pip \
+    python3-rpi.gpio \
+    && rm -rf /var/lib/apt/lists/*
+
+    # 日本語フォントのインストール
+ENV NOTO_DIR /usr/share/fonts/opentype/notosans
+RUN apt-get update && apt-get install -y fonts-noto-cjk && mkdir -p $NOTO_DIR && ln -s /usr/share/fonts/opentype/noto $NOTO_DIR
+
+# エントリーポイントの設定
+CMD ["python3", "your_app.py"]
