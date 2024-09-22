@@ -1,0 +1,79 @@
+このWi-Fiネットワーク（ains-wifi）の認証方法に基づいて、Raspberry Piからの接続方法を説明します。画像から、EAP-PEAP（ユーザ認証方式）とEAP-TLS（クライアント証明書方式）の2つの認証方式がサポートされていることがわかります。以下では、それぞれの方式に対する接続手順を説明します。
+
+### 1. **EAP-PEAP（ユーザ認証方式）での接続方法**
+
+EAP-PEAPは、アカウントとパスワードによる認証を行うため、設定は比較的シンプルです。
+
+1. **wpa_supplicant.confの編集**  
+   以下のコマンドで設定ファイルを編集します。
+
+   ```bash
+   sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+   ```
+
+   ファイルに次の設定を追加します：
+
+   ```conf
+   network={
+       ssid="ains-wifi"
+       key_mgmt=WPA-EAP
+       eap=PEAP
+       identity="your_username"  # 情報センターで発行されたユーザ名
+       password="your_password"  # 発行されたパスワード
+       phase2="auth=MSCHAPV2"
+       ca_cert="/etc/ssl/certs/ca-certificates.crt"
+   }
+   ```
+
+   - `identity`に情報センターから発行されたユーザ名を入力します。
+   - `password`にはそのユーザのパスワードを入力します。
+   - `ca_cert`は、通常のRaspberry Pi OSのデフォルトの証明書パスを使用しています。必要に応じてカスタマイズできます。
+
+2. **wpa_supplicantを再起動**  
+   設定を保存したら、次のコマンドで再起動します。
+
+   ```bash
+   sudo wpa_cli reconfigure
+   ```
+
+### 2. **EAP-TLS（クライアント証明書方式）での接続方法**
+
+EAP-TLSでは、クライアント証明書が必要になります。事前にクライアント証明書とプライベートキー、CA証明書を取得しておく必要があります。
+
+1. **証明書の準備**  
+   情報センターでクライアント証明書を発行してもらい、以下のファイルを準備します：
+   - クライアント証明書（`client_cert.pem`）
+   - クライアントのプライベートキー（`client_key.pem`）
+   - CA証明書（`ca_cert.pem`）
+
+2. **wpa_supplicant.confの編集**  
+   次のように設定ファイルを編集します：
+
+   ```bash
+   network={
+       ssid="ains-wifi"
+       key_mgmt=WPA-EAP
+       eap=TLS
+       identity="your_username"  # ユーザ名
+       ca_cert="/path/to/ca_cert.pem"  # CA証明書のパス
+       client_cert="/path/to/client_cert.pem"  # クライアント証明書のパス
+       private_key="/path/to/client_key.pem"   # クライアントのプライベートキーのパス
+       private_key_passwd="your_private_key_password"  # プライベートキーのパスワード（必要な場合）
+   }
+   ```
+
+   - `ca_cert`、`client_cert`、`private_key`にはそれぞれ対応する証明書やキーのパスを記述します。
+   - `private_key_passwd`はプライベートキーが暗号化されている場合のみ必要です。
+
+3. **wpa_supplicantを再起動**
+
+   ```bash
+   sudo wpa_cli reconfigure
+   ```
+
+### その他の設定情報
+- **Security**: WPA2/WPA3エンタープライズ
+- **AES**: AESを使用
+- **SSID Broadcast**: 有効
+
+これで、必要な設定が揃ったので、Raspberry Piから接続できるはずです。
