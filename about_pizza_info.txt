@@ -1,0 +1,83 @@
+ピザ
+
+https://twitter.com/nanbuwks/status/587637353751035904?s=46&t=9p-LlDKhpPlS4qvXeZhhIQ
+
+Twitter
+nanbuwks on Twitter
+オープンハードウェア珪藻土ピザ石窯の新バージョンDELive。
+今回は据置型ではなく、イベントなどでライブで組立撤収、分解してコンパクトに輸送できる。組み立て方を連ツイするよ。 #FABLIB (311 kB)
+https://twitter.com/nanbuwks/status/587637353751035904?s=46&t=9p-LlDKhpPlS4qvXeZhhIQ
+12:41
+IoTピザ窯考案者 @nanbuwks さんのツイート。
+フィッシュロースターなんかはまんまﾂﾞ大の窯でも使われてる機種だった （編集済み） 
+12:41
+https://www.google.com/search?q=RASPBERRYHABU&sourceid=chrome&ie=UTF-8
+12:41
+使われてるテスト基盤
+これは半田付けしてLEDなど付けているらしい
+12:43
+https://togetter.com/li/646191
+
+Togetter
+RaspberryPi用のアドオンボードRaspberryHabuの作例など
+デジタルOUT,デジタルIN,アナログINなどがついたRaspberryPi用のアドオン拡張ボードキットのRaspberryHabu。作例とプログラム例をまとめていくよ。 (43 kB)
+https://togetter.com/li/646191
+12:43
+テスト基盤の作例 by @nanbuwks さん
+12:43
+https://togetter.com/li/550525
+
+
+Togetter
+RaspberryPi用アドオンボードRaspberryHabuの組み立て方(Vewrsion20130710～)
+安くて楽しいRaspberry Pi。基板ムキダシで電子工作してくれと言わんばかりですがやってみると結構ノウハウがいります。RaspberryHabuは、知識が無くても簡単にできるように、接続ミス.. (52 kB)
+https://togetter.com/li/550525
+12:44
+バージョン違いっぽいけどまだ読んでないから何が違うかわかってない
+12:44
+https://togetter.com/li/515126
+
+Togetter
+RaspberryPi用アドオンボードRaspberryHabuの組み立て方 ～電源部分(Version20130513)～
+RaspberryHabuのBasic版はRaspberry Pi本体の電源を使いますが、パーツを追加してRaspberryHabu独自の電源回路を構築することができます。この電源回路はRaspb.. (59 kB)
+https://togetter.com/li/515126
+12:44
+電源部分編
+12:45
+https://togetter.com/li/515123
+
+
+Togetter
+RaspberryPi用アドオンボードRaspberryHabuの組み立て方 ～カレンダクロック部分～
+カレンダクロックIC、MCP7940Nがちっちゃくて組み立てにくいけれどチャレンジ！ (53 kB)
+https://togetter.com/li/515123
+12:45
+カレンダクロック部分?
+ピザ窯にいるのかはわからんけどペタリ
+12:46
+https://qiita.com/nanbuwks/items/0bb92acf7f7ee075a6b5
+
+Qiita
+IoTピザ窯、または巨大災害レジリエンスで娘に怒られたこと - Qiita
+IoTピザ窯DELive
+
+常用500℃の性能を持つ石窯です。
+
+Raspberry Pi で制御します。
+
+コントローラ。
+
+SSHでRaspberryPiにログオンして、vimで制御プログラムを書いてコンパイルして実行... (54 kB)
+https://qiita.com/nanbuwks/items/0bb92acf7f7ee075a6b5
+12:48
+別のチャンネルにも貼ったやつですが。
+
+これによると、熱電対はクロメル・アルメルという合金を使ったのK型熱電対を使うようです。最高1250℃まで測れるようです。
+他の資料では秋月電子で手に入れた旨が記載されてました。 （編集済み）
+
+13:01
+山田さんが起こしてくれた回路図
+13:02
+https://twitter.com/akiba_otomesi?s=21&t=9p-LlDKhpPlS4qvXeZhhIQ
+
+番外編だけど、IoTピザ使って商業営んでるバーも秋葉原にある
